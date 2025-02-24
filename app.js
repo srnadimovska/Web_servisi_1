@@ -13,6 +13,8 @@ app.use(express.json());
 
 database.db();
 
+console.log(process.env);
+
 
 
 app.get('/api/v1/client', clientController.getAllClients );
@@ -22,9 +24,9 @@ app.patch('/api/v1/client/:id', clientController.updateClient);
 app.delete('/api/v1/client/:id',clientController.deleteClient);
 
 
-const port = 7000;
 
-app.listen(port, (err) => {
+
+app.listen(process.env.PORT, (err) => {
     if (err) return console.log(err.message)
-     console.log(`App started successfully on port ${port}`);
+     console.log(`App started successfully on port ${process.env.PORT}`);
 });

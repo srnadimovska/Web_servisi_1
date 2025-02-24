@@ -1,6 +1,6 @@
 const mongoose = require ('mongoose');
 const dotenv = require('dotenv');
-dotenv.config({ path : `${__dirname}/../..config.env`});
+dotenv.config({ path : `${__dirname}/../../config.env`});
 
 console.log(process.env);
 
@@ -10,8 +10,7 @@ console.log(DB);
 
 exports.db = async()=> {
     try {
-        await mongoose.connect
-            (DB);
+        await mongoose.connect(DB);
         
         console.log('Connected to database');
     } catch(err) {
